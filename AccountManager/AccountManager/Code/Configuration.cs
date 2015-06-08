@@ -28,7 +28,7 @@ namespace AccountManager.Code
         private Configuration()
         {
             _bus = new MessageBus();
-            var eventStore = new SqlEventStore(_bus);
+            var eventStore = new InMemoryEventStore(_bus, new Dictionary<object, List<object>>()); //new SqlEventStore(_bus);
             var repository = new DomainRepository(eventStore);
 
             var commandService = new AccountApplicationService(repository);
