@@ -1,5 +1,3 @@
-aspConf-cqrs
-============
 
 Steps to Run
 ------------
